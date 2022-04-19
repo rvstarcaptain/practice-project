@@ -6,22 +6,29 @@ import About from './Component/About';
 
 import {Routes} from 'react-router-dom';
 import PagenotFount from './Component/PagenotFount';
+import { useEffect, useState } from 'react';
+import List from './Component/List';
+import Loadinglist from './Component/Loadinglist';
+import ManishList from './Component/ManishList';
+import WithProps from './Component/WithProps';
+
 
 function App() {
-  return (
-    <div >
-      <Nav />
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/about" element={<About/>}/>
-        <Route path="*" element={<PagenotFount/>} />
-      </Routes>
+  const data= [
+    {name:"thing one", id:1, list : ['abc','xyz'] },
+    {name:"thing two", id:2, list : ['abc','xyz'] },
+    {name:"thing three", id:3, list : ['abc','xyz'] },
 
 
-
-
+]
+  return(
+    <div>
+      {/* <Loadinglist/> */}
+      <ManishList/>
+      {/* <WithProps data={data}/> */}
     </div>
-  );
+  )
+  
 }
 
 export default App;
